@@ -5,10 +5,10 @@ import { Calendar, MapPin, ExternalLink } from "lucide-react";
 const ExperienceSection = () => {
   const experiences = [
     {
-      title: "Senior Frontend Developer",
-      company: "Tech Company Inc.",
-      location: "San Francisco, CA",
-      period: "2022 - Present",
+      title: "Software Engineer Intern",
+      company: "Centene Corporation",
+      location: "St. Louis, MO",
+      period: "May 2025 - Present",
       description: "Led development of user-facing features for a platform serving 1M+ users. Collaborated with design and backend teams to deliver high-quality, performant web applications.",
       achievements: [
         "Improved page load times by 40% through optimization",
