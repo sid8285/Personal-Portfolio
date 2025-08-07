@@ -9,39 +9,39 @@ const ExperienceSection = () => {
       company: "Centene Corporation",
       location: "St. Louis, MO",
       period: "May 2025 - Present",
-      description: "Led development of user-facing features for a platform serving 1M+ users. Collaborated with design and backend teams to deliver high-quality, performant web applications.",
+      description: "",
       achievements: [
-        "Improved page load times by 40% through optimization",
-        "Mentored 3 junior developers",
-        "Led migration from legacy framework to React"
+        "Designed and implemented a scalable large file ingestion pipeline using Spring Boot, AWS S3, Lambda, Step Functions, and DynamoDB to process and route document uploads to FileNet based on file size and business logic.",
+        "Automated end-to-end file processing workflow including SFTP transfer, metadata generation, API integration, and scheduled status polling using AWS EventBridge and Secrets Manager, ensuring document lifecycle management.",
+        "Designed and implemented cloud-native API auth framework with Spring Boot, OAuth 2.0/JWT, and Axway Gateway, integrating CyberArk for credential management and Radiant Logic for AD group-to-scope mapping.",
+        "Implemented a CI/CD-ready microservice with automated token issuance/validation and Entra Key integration."
       ],
-      technologies: ["React", "TypeScript", "Next.js", "GraphQL", "AWS"]
+      technologies: ["Java", "Spring Boot", "AWS", "OAuth 2.0", "Kubernetes"]
     },
     {
-      title: "Full Stack Developer",
-      company: "Startup Solutions",
-      location: "Remote",
-      period: "2020 - 2022",
-      description: "Built and maintained multiple client projects from concept to deployment. Worked directly with clients to understand requirements and deliver custom solutions.",
+      title: "Research Assistant",
+      company: "Georgia Institute of Technology",
+      location: "Atlanta, GA",
+      period: "April 2025 - Present",
+      description: "",
       achievements: [
-        "Delivered 15+ successful projects on time",
-        "Reduced client onboarding time by 60%",
-        "Implemented automated testing increasing code reliability"
+        "Developing a computer vision pipeline to estimate gestational weight gain from publicly sourced data, implementing deep learning models and integrating OpenCV for real-time inference and testing.",
+        "Engineering fairness-aware model evaluation using TIDE-based identity annotation techniques, enabling bias detection and counterfactual analysis across demographic attributes to ensure responsible AI deployment."
       ],
-      technologies: ["Vue.js", "Node.js", "PostgreSQL", "Docker", "Heroku"]
+      technologies: ["Python", "PyTorch", "OpenCV", "TensorFlow"]
     },
     {
-      title: "Frontend Developer",
-      company: "Digital Agency Co.",
-      location: "New York, NY",
-      period: "2019 - 2020",
-      description: "Developed responsive websites and web applications for various clients in different industries. Focused on creating pixel-perfect implementations of design mockups.",
+      title: "Internal IT Intern",
+      company: "World Wide Technology",
+      location: "St. Louis, MO",
+      period: "May 2024 - April 2025",
+      description: "",
       achievements: [
-        "Created 20+ responsive websites",
-        "Achieved 95+ PageSpeed scores consistently",
-        "Established component library for team efficiency"
+        "Assisted in developing and implementing applications for M365 cleanup project using Powershell in which the goal was to reduce application clutter that the company had accumulated and did not use within the last 5 years.",
+        "Met with Stakeholders (team leads, senior engineers) to define the scope of the applications including data retention period, system design for dry run functionality, exception handling in the case of errors, and alerting and logging.",
+        "Wrote integration tests to test whether cleanup is occurring or not, deployed the utility on Microsoft Azure as well as created an Ansible playbook to deploy the cleanup utility tool to an Azure Virtual Machine."
       ],
-      technologies: ["JavaScript", "SCSS", "WordPress", "jQuery", "Gulp"]
+      technologies: ["Powershell", "Power BI", "Azure", "Ansible"]
     }
   ];
 
@@ -86,12 +86,12 @@ const ExperienceSection = () => {
                       </div>
                     </div>
 
-                    <p className="text-foreground/80 mb-6 leading-relaxed">
+                    {/* <p className="text-foreground/80 mb-6 leading-relaxed">
                       {exp.description}
-                    </p>
+                    </p> */}
 
                     <div className="mb-6">
-                      <h4 className="text-lg font-semibold text-foreground mb-3">Key Achievements</h4>
+                      {/* <h4 className="text-lg font-semibold text-foreground mb-3">Key Achievements</h4> */}
                       <ul className="space-y-2">
                         {exp.achievements.map((achievement, i) => (
                           <li key={i} className="flex items-start gap-2 text-foreground/80">
@@ -127,7 +127,7 @@ const ExperienceSection = () => {
             <div className="inline-flex items-center gap-2 text-foreground/60">
               <span>Want to see more details?</span>
               <a 
-                href="#" 
+                href="/resume.pdf" 
                 className="text-primary hover:text-accent transition-colors inline-flex items-center gap-1"
               >
                 View Full Resume <ExternalLink size={16} />

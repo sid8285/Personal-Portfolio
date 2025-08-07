@@ -6,33 +6,33 @@ import { ExternalLink, Github, Eye } from "lucide-react";
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-featured e-commerce platform with real-time inventory management, payment processing, and admin dashboard. Built for scalability and performance.",
-      image: "/api/placeholder/600/400",
-      technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "AWS"],
-      features: ["Real-time inventory", "Payment processing", "Admin dashboard", "Mobile responsive"],
+      title: "Trade Lens",
+      description: "A full-stack web platform for real-time stock analysis and market insights gathered by scraping data from Reddit.",
+      image: "/tradeLens1.png",
+      technologies: ["TypeScript", "Python", "TursoDB", "Google Cloud"],
+      features: ["Weekly updates", "Sentiment analysis", "Clean dashboard", "Mobile friendly"],
       liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://www.github.com/sid8285/tradelens",
       featured: true
     },
     {
-      title: "Task Management App",
-      description: "Collaborative task management application with team features, real-time updates, and project tracking capabilities.",
-      image: "/api/placeholder/600/400",
-      technologies: ["Vue.js", "Firebase", "Vuetify", "Chart.js"],
+      title: "BORD",
+      description: "Task management app which utilizes monetary incentives to complete the tasks you set out to do.",
+      image: "/BORD.png",
+      technologies: ["Swift", "Swift UI", "Firebase", "AWS"],
       features: ["Team collaboration", "Real-time updates", "Project analytics", "Drag & drop"],
       liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://www.github.com/sid8285/Swift-UI-Learning",
       featured: true
     },
     {
-      title: "Weather Dashboard",
-      description: "Beautiful weather dashboard with location-based forecasts, interactive maps, and detailed weather analytics.",
+      title: "Sid's BlockChain",
+      description: "Using python, I created my very own blockchain from scratch.",
       image: "/api/placeholder/600/400",
-      technologies: ["React", "D3.js", "Weather API", "Mapbox"],
+      technologies: ["Python"],
       features: ["Location-based forecasts", "Interactive maps", "Weather analytics", "PWA"],
       liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://www.github.com/sid8285/blockchain_project",
       featured: false
     },
     {
@@ -55,16 +55,16 @@ const ProjectsSection = () => {
       githubUrl: "#",
       featured: false
     },
-    {
-      title: "Analytics Dashboard",
-      description: "Comprehensive analytics dashboard with data visualization, custom reports, and export functionality.",
-      image: "/api/placeholder/600/400",
-      technologies: ["React", "D3.js", "Python", "FastAPI"],
-      features: ["Data visualization", "Custom reports", "Export functionality", "Role-based access"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: false
-    }
+    // {
+    //   title: "Analytics Dashboard",
+    //   description: "Comprehensive analytics dashboard with data visualization, custom reports, and export functionality.",
+    //   image: "/api/placeholder/600/400",
+    //   technologies: ["React", "D3.js", "Python", "FastAPI"],
+    //   features: ["Data visualization", "Custom reports", "Export functionality", "Role-based access"],
+    //   liveUrl: "#",
+    //   githubUrl: "#",
+    //   featured: false
+    // }
   ];
 
   const featuredProjects = projects.filter(p => p.featured);
@@ -98,15 +98,11 @@ const ProjectsSection = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-4 left-4 right-4 flex gap-2">
-                      <Button size="sm" className="bg-primary/90 hover:bg-primary">
-                        <Eye size={14} className="mr-1" />
-                        Live Demo
-                      </Button>
-                      <Button size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10">
+                    <div className="absolute bottom-4 left-4 right-4 flex justify-center">
+                      {/* <Button size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10">
                         <Github size={14} className="mr-1" />
                         Code
-                      </Button>
+                      </Button> */}
                     </div>
                   </div>
                 </div>
@@ -143,14 +139,12 @@ const ProjectsSection = () => {
                     ))}
                   </div>
                   
-                  <div className="flex gap-2">
-                    <Button size="sm" className="flex-1">
-                      <ExternalLink size={14} className="mr-1" />
-                      Live Demo
-                    </Button>
-                    <Button size="sm" variant="outline" className="flex-1">
-                      <Github size={14} className="mr-1" />
-                      GitHub
+                  <div className="flex justify-center">
+                    <Button size="sm" variant="outline" className="border-primary/50 text-primary hover:bg-primary/10" asChild>
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <Github size={14} className="mr-1" />
+                        GitHub
+                      </a>
                     </Button>
                   </div>
                 </div>
@@ -174,10 +168,7 @@ const ProjectsSection = () => {
                     <h4 className="text-lg font-semibold group-hover:text-primary transition-colors">
                       {project.title}
                     </h4>
-                    <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <a href={project.liveUrl} className="text-foreground/60 hover:text-primary">
-                        <ExternalLink size={16} />
-                      </a>
+                    <div className="flex justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                       <a href={project.githubUrl} className="text-foreground/60 hover:text-primary">
                         <Github size={16} />
                       </a>
