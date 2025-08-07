@@ -3,6 +3,16 @@ import { ArrowDown, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <section 
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
@@ -46,13 +56,15 @@ const HeroSection = () => {
             <Button 
               size="lg" 
               className="bg-gradient-accent text-black font-medium hover:shadow-glow transition-all duration-300 min-w-[200px]"
+              onClick={() => scrollToSection('experience')}
             >
-              View My Work
+              View My Experience
             </Button>
             <Button 
               variant="outline" 
               size="lg"
               className="border-primary/50 text-primary hover:bg-primary/10 min-w-[200px]"
+              onClick={() => scrollToSection('contact')}
             >
               Get In Touch
             </Button>
@@ -61,7 +73,13 @@ const HeroSection = () => {
         
         {/* Scroll indicator */}
         <div className="flex justify-center mt-12">
-          <ArrowDown size={24} className="animate-bounce text-foreground/40" />
+          <button 
+            onClick={() => scrollToSection('about')}
+            className="text-foreground/40 hover:text-foreground/70 transition-colors cursor-pointer"
+            aria-label="Scroll to next section"
+          >
+            <ArrowDown size={24} className="animate-bounce" />
+          </button>
         </div>
       </div>
     </section>
