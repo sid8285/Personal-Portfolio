@@ -4,9 +4,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Mail, href: "#", label: "Email" }
+    { icon: Github, href: "https://github.com/sid8285", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/siddhant-srivastava8285/", label: "LinkedIn" },
+    { icon: Mail, href: "mailto:ssrivastava329@gatech.edu", label: "Email" }
   ];
 
   const quickLinks = [
@@ -23,11 +23,10 @@ const Footer = () => {
           {/* Brand */}
           <div className="animate-fade-in">
             <div className="text-2xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-4">
-              Your Name
+              Siddhant Srivastava
             </div>
             <p className="text-foreground/70 mb-4">
-              Creative developer passionate about building beautiful, 
-              functional digital experiences that make a difference.
+              Developer passionate about learning andbuilding cool software that makes a difference.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((link) => {
@@ -66,31 +65,31 @@ const Footer = () => {
           <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <h4 className="text-lg font-semibold mb-4 text-foreground">Let's Connect</h4>
             <div className="space-y-2 text-foreground/70">
-              <p>Available for new opportunities</p>
-              <p>Based in San Francisco, CA</p>
+              <p>Looking to grow 🤖</p>
+              <p>Based in Atlanta, GA</p>
               <p>Open to remote work</p>
             </div>
             <div className="mt-4">
               <a 
-                href="mailto:hello@yourname.com"
+                href="mailto:ssrivastava329@gatech.edu"
                 className="inline-flex items-center gap-2 text-primary hover:text-accent transition-colors"
               >
                 <Mail size={16} />
-                hello@yourname.com
+                ssrivastava329@gatech.edu
               </a>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border/50 flex flex-col sm:flex-row justify-between items-center gap-4 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+        {/* <div className="pt-8 border-t border-border/50 flex flex-col sm:flex-row justify-between items-center gap-4 animate-fade-in" style={{ animationDelay: '0.3s' }}>
           <p className="text-foreground/60 text-sm">
             © {currentYear} Your Name. All rights reserved.
           </p>
           <p className="text-foreground/60 text-sm flex items-center gap-1">
             Built with <Heart size={14} className="text-red-500" /> using React & Tailwind CSS
           </p>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

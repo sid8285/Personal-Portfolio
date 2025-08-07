@@ -2,8 +2,15 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Send, MessageCircle, Coffee } from "lucide-react";
+import { Mail, Phone, MapPin, Send, MessageCircle, Coffee, Loader2, CheckCircle, AlertCircle } from "lucide-react";
 import { useState } from "react";
+import emailjs from '@emailjs/browser';
+import { toast } from "sonner";
+
+// EmailJS Configuration from environment variables
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -12,11 +19,106 @@ const ContactSection = () => {
     subject: "",
     message: ""
   });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+
+    // Debug logging
+    console.log("EmailJS Config Check:", {
+      serviceId: EMAILJS_SERVICE_ID,
+      templateId: EMAILJS_TEMPLATE_ID,
+      publicKey: EMAILJS_PUBLIC_KEY,
+      hasService: !!EMAILJS_SERVICE_ID,
+      hasTemplate: !!EMAILJS_TEMPLATE_ID,
+      hasKey: !!EMAILJS_PUBLIC_KEY
+    });
+
+    try {
+      // Validate that we have all required config
+      if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+        throw new Error("Missing EmailJS configuration. Check your .env.local file.");
+      }
+
+      // EmailJS template parameters - try both naming conventions
+      const templateParams = {
+        // Common naming convention
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject || "Portfolio Contact",
+        message: formData.message,
+        // Alternative naming convention
+        from_name: formData.name,
+        from_email: formData.email,
+        to_name: "Siddhant",
+        // Additional fallbacks
+        user_name: formData.name,
+        user_email: formData.email,
+        reply_to: formData.email,
+      };
+
+      console.log("Sending email with params:", templateParams);
+
+      const result = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
+
+      console.log("EmailJS success:", result);
+
+      // Success - clear form and show success message
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+      });
+      
+      toast.success("Message sent successfully! I'll get back to you soon.", {
+        description: "Thanks for reaching out!"
+      });
+
+    } catch (error) {
+      console.error("EmailJS error details:", error);
+      
+      // Log the full error object for debugging
+      if (error && typeof error === 'object') {
+        console.error("Error status:", (error as any).status);
+        console.error("Error text:", (error as any).text);
+        console.error("Full error object:", JSON.stringify(error, null, 2));
+      }
+      
+      // More specific error messages
+      let errorMessage = "Failed to send message";
+      let errorDescription = "Please try again or contact me directly via email.";
+      
+      if (error && typeof error === 'object') {
+        const errorObj = error as any;
+        if (errorObj.status === 400) {
+          errorDescription = "Bad request - check template configuration and variable names.";
+        } else if (errorObj.status === 404) {
+          errorDescription = "Service or template not found. Please check your EmailJS setup.";
+        } else if (errorObj.status === 403 || errorObj.status === 401) {
+          errorDescription = "Authentication failed. Please check your public key.";
+        } else if (errorObj.text) {
+          errorDescription = `EmailJS error: ${errorObj.text}`;
+        }
+      } else if (error instanceof Error) {
+        if (error.message.includes("Missing EmailJS configuration")) {
+          errorDescription = "Configuration error. Please check environment variables.";
+        }
+      }
+      
+      toast.error(errorMessage, {
+        description: errorDescription
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -30,19 +132,19 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "hello@yourname.com",
-      href: "mailto:hello@yourname.com"
+      value: "ssrivastava329@gatech.edu",
+      href: "mailto:ssrivastava329@gatech.edu"
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "+1 (678) 477-8285",
+      href: "tel:+16784778285"
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Atlanta, GA",
       href: "#"
     }
   ];
@@ -137,10 +239,20 @@ const ContactSection = () => {
                 <Button 
                   type="submit" 
                   size="lg" 
-                  className="w-full bg-gradient-accent text-black font-medium hover:shadow-glow transition-all duration-300"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-accent text-black font-medium hover:shadow-glow transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <Send size={16} className="mr-2" />
-                  Send Message
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 size={16} className="mr-2 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send size={16} className="mr-2" />
+                      Send Message
+                    </>
+                  )}
                 </Button>
               </form>
             </Card>

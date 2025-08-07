@@ -37,21 +37,21 @@ const ProjectsSection = () => {
     },
     {
       title: "Portfolio Website",
-      description: "Custom portfolio website with animation, dark mode, and CMS integration for easy content management.",
+      description: "Custom portfolio website detailing my projects and skills. You are viewing it right now!",
       image: "/api/placeholder/600/400",
-      technologies: ["Next.js", "Framer Motion", "Sanity", "Tailwind"],
+      technologies: ["TypeScript", "React", "AWS"],
       features: ["Smooth animations", "Dark mode", "CMS integration", "SEO optimized"],
       liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://www.github.com/sid8285/Personal-Portfolio",
       featured: false
     },
     {
-      title: "Chat Application",
-      description: "Real-time chat application with file sharing, emoji reactions, and group chat functionality.",
+      title: "ML Mask Detection",
+      description: "In this project, I created an ML model to detect if a person is wearing a mask or not.",
       image: "/api/placeholder/600/400",
-      technologies: ["Socket.io", "Express", "MongoDB", "React"],
-      features: ["Real-time messaging", "File sharing", "Group chats", "Emoji reactions"],
-      liveUrl: "#",
+      technologies: ["Python", "TensorFlow", "Keras", "React.js"],
+      features: ["Image Classification", "High accuracy classification", "Image preprocessing", "Model training pipeline"],
+      liveUrl: "https://aimaskdetection.netlify.app/",
       githubUrl: "#",
       featured: false
     },
@@ -140,12 +140,21 @@ const ProjectsSection = () => {
                   </div>
                   
                   <div className="flex justify-center">
-                    <Button size="sm" variant="outline" className="border-primary/50 text-primary hover:bg-primary/10" asChild>
-                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                        <Github size={14} className="mr-1" />
-                        GitHub
-                      </a>
-                    </Button>
+                    {project.liveUrl && project.liveUrl !== "#" ? (
+                      <Button size="sm" variant="outline" className="border-primary/50 text-primary hover:bg-primary/10" asChild>
+                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                          <Eye size={14} className="mr-1" />
+                          Live Demo
+                        </a>
+                      </Button>
+                    ) : (
+                      <Button size="sm" variant="outline" className="border-primary/50 text-primary hover:bg-primary/10" asChild>
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                          <Github size={14} className="mr-1" />
+                          GitHub
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </div>
               </Card>
@@ -169,9 +178,15 @@ const ProjectsSection = () => {
                       {project.title}
                     </h4>
                     <div className="flex justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      <a href={project.githubUrl} className="text-foreground/60 hover:text-primary">
-                        <Github size={16} />
-                      </a>
+                      {project.liveUrl && project.liveUrl !== "#" ? (
+                        <a href={project.liveUrl} className="text-foreground/60 hover:text-primary" target="_blank" rel="noopener noreferrer">
+                          <Eye size={16} />
+                        </a>
+                      ) : (
+                        <a href={project.githubUrl} className="text-foreground/60 hover:text-primary" target="_blank" rel="noopener noreferrer">
+                          <Github size={16} />
+                        </a>
+                      )}
                     </div>
                   </div>
                   
@@ -200,12 +215,14 @@ const ProjectsSection = () => {
             </div>
           </div>
 
-          <div className="text-center">
-            <Button variant="outline" size="lg" className="border-primary/50 text-primary hover:bg-primary/10">
-              <Github size={16} className="mr-2" />
-              View All Projects on GitHub
-            </Button>
-          </div>
+                      <div className="text-center">
+              <Button variant="outline" size="lg" className="border-primary/50 text-primary hover:bg-primary/10" asChild>
+                <a href="https://www.github.com/sid8285" target="_blank" rel="noopener noreferrer">
+                  <Github size={16} className="mr-2" />
+                  View All Projects on GitHub
+                </a>
+              </Button>
+            </div>
         </div>
       </div>
     </section>

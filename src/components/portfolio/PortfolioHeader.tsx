@@ -35,7 +35,7 @@ const PortfolioHeader = () => {
           <div className="flex items-center">
             {/* Temporarily commented out to test HMR performance */}
             <img
-              src="/headshot-compressed.jpg"
+              src="/sidface.JPG"
               alt="Siddhant Srivastava"
               className="w-12 h-12 rounded-full object-cover border-2 border-primary/20 hover:border-primary/40 cursor-pointer transition-all duration-300 hover:animate-shake"
               onError={(e) => {
