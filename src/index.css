@@ -71,6 +71,17 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
+  /* Hero background responsive fix */
+  .hero-background {
+    background-attachment: fixed;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-background {
+      background-attachment: scroll;
+    }
+  }
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
