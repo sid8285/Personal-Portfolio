@@ -20,7 +20,7 @@ const ProjectsSection = () => {
       description: "Task management app which utilizes monetary incentives to complete the tasks you set out to do.",
       image: "/BORD.png",
       technologies: ["Swift", "Swift UI", "Firebase", "AWS"],
-      features: ["Team collaboration", "Real-time updates", "Project analytics", "Drag & drop"],
+      features: ["Monetary incentives", "Task completion tracking", "Goal setting", "Progress visualization"],
       liveUrl: "#",
       githubUrl: "https://www.github.com/sid8285/Swift-UI-Learning",
       featured: true
