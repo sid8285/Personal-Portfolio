@@ -8,7 +8,7 @@ const AboutSection = () => {
       icon: Code,
       title: "Languages",
       description: "Full-stack development with modern frameworks and technologies",
-      tech: ["Java", "Python", "C", "JavaScript"]
+      tech: ["Java", "Python", "C", "Go"]
     },
     {
       icon: Layers,
@@ -20,7 +20,7 @@ const AboutSection = () => {
       icon: Cloudy,
       title: "Cloud & DevOps",
       description: "Deployment, infrastructure, and development operations",
-      tech: ["AWS", "Docker", "CI/CD", "Kubernetes"]
+      tech: ["AWS", "Docker", "Google Cloud Platform", "Kubernetes"]
     },
     {
       icon: Users,

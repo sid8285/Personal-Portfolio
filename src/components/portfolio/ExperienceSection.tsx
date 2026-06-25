@@ -6,17 +6,16 @@ const ExperienceSection = () => {
   const experiences = [
     {
       title: "Software Engineer Intern",
-      company: "Centene Corporation",
-      location: "St. Louis, MO",
-      period: "May 2025 - Present",
+      company: "NCR Voyix",
+      location: "Atlanta, GA",
+      period: "May 2026 - Present",
       description: "",
       achievements: [
-        "Designed and implemented a scalable large file ingestion pipeline using Spring Boot, AWS S3, Lambda, Step Functions, and DynamoDB to process and route document uploads to FileNet based on file size and business logic.",
-        "Automated end-to-end file processing workflow including SFTP transfer, metadata generation, API integration, and scheduled status polling using AWS EventBridge and Secrets Manager, ensuring document lifecycle management.",
-        "Designed and implemented cloud-native API auth framework with Spring Boot, OAuth 2.0/JWT, and Axway Gateway, integrating CyberArk for credential management and Radiant Logic for AD group-to-scope mapping.",
-        "Implemented a CI/CD-ready microservice with automated token issuance/validation and Entra Key integration."
+        "Refactored metrics GraphQL APIs in Go, reducing average query response times by 25% (200ms → 150ms) across production services.",
+        "Designed and implemented an agentic skills framework leveraging GitHub Copilot, GPT, and Claude, enabling dynamic sub-agent creation and task delegation; introduced folder-scoped Markdown context files consolidating monorepo context, reducing token consumption by 45% and deployed to production across the engineering team.",
+        "Configured Kubernetes controllers to manage container image lifecycle across distributed store clusters, supporting reliable backend deployments at scale."
       ],
-      technologies: ["Java", "Spring Boot", "AWS", "OAuth 2.0", "Kubernetes"]
+      technologies: ["Go", "GraphQL", "Google Cloud Platform", "Kubernetes", "Claude"]
     },
     {
       title: "Research Assistant",
@@ -25,24 +24,26 @@ const ExperienceSection = () => {
       period: "April 2025 - Present",
       description: "",
       achievements: [
-        "Developing a computer vision pipeline to estimate gestational weight gain from publicly sourced data, implementing deep learning models and integrating OpenCV for real-time inference and testing.",
-        "Engineering fairness-aware model evaluation using TIDE-based identity annotation techniques, enabling bias detection and counterfactual analysis across demographic attributes to ensure responsible AI deployment."
+        "Developed a computer vision pipeline to estimate gestational weight gain from clinical and publicly sourced image data, implementing deep learning models with OpenCV for real-time inference, targeting deployment for maternal health screening across Sub-Saharan Africa.",
+        "Engineered fairness-aware model evaluation using TIDE-based identity annotation, enabling bias detection and counterfactual analysis across demographic attributes to ensure equitable model performance across diverse patient populations."
       ],
       technologies: ["Python", "PyTorch", "OpenCV", "TensorFlow"]
     },
     {
-      title: "Internal IT Intern",
-      company: "World Wide Technology",
+      title: "Software Engineer Intern",
+      company: "Centene Corporation",
       location: "St. Louis, MO",
-      period: "May 2024 - April 2025",
+      period: "May 2025 - December 2025",
       description: "",
       achievements: [
-        "Assisted in developing and implementing applications for M365 cleanup project using Powershell in which the goal was to reduce application clutter that the company had accumulated and did not use within the last 5 years.",
-        "Met with Stakeholders (team leads, senior engineers) to define the scope of the applications including data retention period, system design for dry run functionality, exception handling in the case of errors, and alerting and logging.",
-        "Wrote integration tests to test whether cleanup is occurring or not, deployed the utility on Microsoft Azure as well as created an Ansible playbook to deploy the cleanup utility tool to an Azure Virtual Machine."
+        "Designed and implemented a scalable large file ingestion pipeline using Spring Boot, AWS S3, Lambda, Step Functions, and DynamoDB to process and route document uploads to FileNet based on file size and business logic.",
+        "Automated end-to-end file processing workflow including SFTP transfer, metadata generation, API integration, and scheduled status polling using AWS EventBridge and Secrets Manager, ensuring document lifecycle management.",
+        "Designed and implemented cloud-native API auth framework with Spring Boot, OAuth 2.0/JWT, and Axway Gateway, integrating CyberArk for credential management and Radiant Logic for AD group-to-scope mapping.",
+        "Implemented a CI/CD-ready microservice with automated token issuance/validation and Entra Key integration."
       ],
-      technologies: ["Powershell", "Power BI", "Azure", "Ansible"]
+      technologies: ["Java", "Spring Boot", "AWS", "OAuth 2.0", "Kubernetes"]
     }
+    
   ];
 
   return (
