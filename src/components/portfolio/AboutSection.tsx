@@ -8,7 +8,7 @@ const AboutSection = () => {
       icon: Code,
       title: "Languages",
       description: "Full-stack development with modern frameworks and technologies",
-      tech: ["Java", "Python", "C", "Go"]
+      tech: ["Python", "Go", "Java", "C++"]
     },
     {
       icon: Layers,
@@ -50,7 +50,7 @@ const AboutSection = () => {
               <div className="space-y-4 text-foreground/80">
                 <p>
                   I started my journey in tech because I loved the idea of being able to build anything using just my imagination. 
-                  What began as tinkering with HTML and CSS has evolved into a passion for full-stack development and almost 2 years of industry experience. 
+                  What began as tinkering with HTML and CSS has evolved into a passion for backend & AI development and almost 2 years of industry experience. 
                   I am very proud of the work I have done and the projects I have completed, and I am always looking for new challenges and opportunities to grow.
                 </p>
                 <p>

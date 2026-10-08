@@ -19,10 +19,10 @@ const ProjectsSection = () => {
       title: "BORD",
       description: "Task management app which utilizes monetary incentives to complete the tasks you set out to do.",
       image: "/BORD.png",
-      technologies: ["Swift", "Swift UI", "Firebase", "AWS"],
+      technologies: ["Python", "Qwen3-VL", "Stripe", "AWS", "PostgreSQL"],
       features: ["Monetary incentives", "Task completion tracking", "Goal setting", "Progress visualization"],
       liveUrl: "#",
-      githubUrl: "https://www.github.com/sid8285/Swift-UI-Learning",
+      githubUrl: "https://github.com/sid8285/BORD",
       featured: true
     },
     {
@@ -46,13 +46,13 @@ const ProjectsSection = () => {
       featured: false
     },
     {
-      title: "ML Mask Detection",
-      description: "In this project, I created an ML model to detect if a person is wearing a mask or not.",
+      title: "Edge Sync Platform",
+      description: "An edge-to-cloud transaction sync lab with two Go services that record sales locally and upload them to a central cloud when connectivity allows.",
       image: "/api/placeholder/600/400",
-      technologies: ["Python", "TensorFlow", "Keras", "React.js"],
-      features: ["Image Classification", "High accuracy classification", "Image preprocessing", "Model training pipeline"],
-      liveUrl: "https://aimaskdetection.netlify.app/",
-      githubUrl: "#",
+      technologies: ["Go", "Docker", "Kubernetes"],
+      features: ["Offline-first writes", "Scheduled sync retries", "Idempotent cloud ingest", "Docker Compose + K8s"],
+      liveUrl: "#",
+      githubUrl: "https://github.com/sid8285/edge-sync-service",
       featured: false
     },
     // {

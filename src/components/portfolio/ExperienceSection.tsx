@@ -11,7 +11,7 @@ const ExperienceSection = () => {
       period: "May 2026 - Present",
       description: "",
       achievements: [
-        "Refactored metrics GraphQL APIs in Go, reducing average query response times by 25% (200ms → 150ms) across production services.",
+        "Refactored metrics GraphQL APIs in Go, reducing average query response times by 56% (200ms → 150ms) across production services.",
         "Designed and implemented an agentic skills framework leveraging GitHub Copilot, GPT, and Claude, enabling dynamic sub-agent creation and task delegation; introduced folder-scoped Markdown context files consolidating monorepo context, reducing token consumption by 45% and deployed to production across the engineering team.",
         "Configured Kubernetes controllers to manage container image lifecycle across distributed store clusters, supporting reliable backend deployments at scale."
       ],

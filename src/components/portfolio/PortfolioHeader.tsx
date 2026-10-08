@@ -16,7 +16,7 @@ const PortfolioHeader = () => {
   const socialLinks = {
     github: "https://github.com/sid8285",
     linkedin: "https://www.linkedin.com/in/siddhant-srivastava8285",
-    email: "mailto:ssrivastava329@gatech.edu",
+    email: "mailto:sid.srivastava@outlook.com",
     resume: "/resume.pdf" // Make sure to add your resume file to the public folder
   };
 
